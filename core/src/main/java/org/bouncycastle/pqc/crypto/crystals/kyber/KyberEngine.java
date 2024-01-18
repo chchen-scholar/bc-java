@@ -1,8 +1,8 @@
 package org.bouncycastle.pqc.crypto.crystals.kyber;
 
-import java.security.SecureRandom;
-
 import org.bouncycastle.util.Arrays;
+
+import java.security.SecureRandom;
 
 class KyberEngine
 {
@@ -145,13 +145,13 @@ class KyberEngine
             KyberEta1 = 3;
             KyberPolyCompressedBytes = 128;
             KyberPolyVecCompressedBytes = k * 320;
-            sessionKeyLength = 16;
+            sessionKeyLength = 32;
             break;
         case 3:
             KyberEta1 = 2;
             KyberPolyCompressedBytes = 128;
             KyberPolyVecCompressedBytes = k * 320;
-            sessionKeyLength = 24;
+            sessionKeyLength = 32;
             break;
         case 4:
             KyberEta1 = 2;
@@ -176,6 +176,7 @@ class KyberEngine
         this.CryptoSecretKeyBytes = KyberSecretKeyBytes;
         this.CryptoPublicKeyBytes = KyberPublicKeyBytes;
         this.CryptoCipherTextBytes = KyberCipherTextBytes;
+
 
         if(usingAes)
         {
