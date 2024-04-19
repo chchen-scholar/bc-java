@@ -76,6 +76,9 @@ public class EtsiTs102941DataContent
         case authorizationResponse:
             etsiTs102941DataContent = InnerAtResponse.getInstance(asn1TaggedObject.getExplicitBaseObject());
             return;
+        case certificateRevocationList:
+            etsiTs102941DataContent = ToBeSignedCrl.getInstance(asn1TaggedObject.getObject());
+            return;
         case certificateTrustListTlm:
             etsiTs102941DataContent = ToBeSignedTlmCtl.getInstance(asn1TaggedObject.getExplicitBaseObject());
             return;
@@ -90,6 +93,9 @@ public class EtsiTs102941DataContent
             return;
         case caCertificateRequest:
             etsiTs102941DataContent = CaCertificateRequest.getInstance(asn1TaggedObject.getExplicitBaseObject());
+            return;
+        case linkCertificateTlm:
+            etsiTs102941DataContent = ToBeSignedLinkCertificateTlm.getInstance(asn1TaggedObject.getObject());
             return;
         //
         // This is incomplete
